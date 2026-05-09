@@ -51,7 +51,7 @@ const Header = () => {
 					<h1
 						className="text-xl font-bold tracking-tight"
 						aria-label="App Name">
-						NEXT App
+						AgeTracker
 					</h1>
 				</Link>
 
@@ -60,7 +60,7 @@ const Header = () => {
 					<Link
 						href={"/"}
 						className="hover:text-primary focus-visible:text-primary text-sm font-medium focus-visible:outline-none">
-						Home
+						Basic
 					</Link>
 					<Link
 						href={"https://github.com/piyushsarkar-dev"}
