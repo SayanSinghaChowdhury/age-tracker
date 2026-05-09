@@ -1,4 +1,3 @@
-import BasicAge from "@/components/BasicAge";
 import {
 	Card,
 	CardContent,
@@ -8,22 +7,23 @@ import {
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "AgeTracker|Basic Age Calculator",
-	description: "Age Calculator with Basic",
+	title: "AgeTracker|Advance Age Calculator",
+	description: "Age Calculator with Advance",
 };
-// Basic Page
+
+// Advance Page
 const page = () => {
 	return (
 		<section className="grid h-[90dvh] place-items-center">
 			<Card className="w-sm border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg">
 				<CardHeader>
-					<CardTitle className="text-center font-sans text-2xl font-semibold">
+					<CardTitle className="text-center text-2xl font-semibold">
 						Basic Age Calculator
 					</CardTitle>
 				</CardHeader>
 				<CardContent>
-					{/*Basic age Component call */}
-					<BasicAge />
+					{/*Adsvance age Component call */}
+					{/* <BasicAge /> */}
 				</CardContent>
 			</Card>
 		</section>

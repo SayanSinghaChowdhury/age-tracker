@@ -31,7 +31,7 @@ const Header = () => {
 
 	return (
 		<header
-			className={`fixed top-0 right-0 left-0 z-50 backdrop-blur-md transition-all duration-300 ease-out ${
+			className={`fixed top-0 right-0 left-0 z-50 backdrop-blur-md transition-all duration-300 duration-[1.5s] ease-out ${
 				isScrolled
 					? "bg-background/80 border-border border-b shadow-sm"
 					: "border-b border-b-transparent bg-transparent shadow-none"
@@ -63,7 +63,7 @@ const Header = () => {
 						Basic
 					</Link>
 					<Link
-						href={"https://github.com/piyushsarkar-dev"}
+						href={"https://github.com/SayanSinghaChowdhury/age-tracker"}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="focus-visible:text-primary focus-visible:outline-none">
