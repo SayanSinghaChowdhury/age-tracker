@@ -1,7 +1,7 @@
 "use client";
 
 import { format, formatDistanceToNow, isBefore, startOfToday } from "date-fns";
-import { CalendarArrowDownIcon } from "lucide-react";
+import { BrushCleaningIcon, CalendarArrowDownIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./shadcnui/button";
 import { Calendar } from "./shadcnui/calendar";
@@ -55,10 +55,11 @@ const BasicAge = () => {
 			</Popover>
 
 			<Button
-				className="flex justify-between gap-6 border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg"
+				className="flex w-auto justify-between gap-2 border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg"
 				onClick={clear}
 				variant="outline">
-				Clear
+				Clean
+				<BrushCleaningIcon />
 			</Button>
 		</div>
 	);
