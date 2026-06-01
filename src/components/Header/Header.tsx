@@ -62,6 +62,12 @@ const Header = () => {
 						className="hover:text-primary focus-visible:text-primary text-sm font-medium focus-visible:outline-none">
 						Basic
 					</Link>
+
+					<Link
+						href={"/advance"}
+						className="hover:text-primary focus-visible:text-primary text-sm font-medium focus-visible:outline-none">
+						Advance
+					</Link>
 					<Link
 						href={"https://github.com/SayanSinghaChowdhury/age-tracker"}
 						target="_blank"

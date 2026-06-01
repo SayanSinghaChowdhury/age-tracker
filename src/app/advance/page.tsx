@@ -1,3 +1,4 @@
+import AdvanceAge from "@/components/AdvanceAge";
 import {
 	Card,
 	CardContent,
@@ -23,7 +24,7 @@ const page = () => {
 				</CardHeader>
 				<CardContent>
 					{/*Adsvance age Component call */}
-					{/* <BasicAge /> */}
+					<AdvanceAge />
 				</CardContent>
 			</Card>
 		</section>
