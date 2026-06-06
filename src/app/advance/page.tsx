@@ -19,7 +19,7 @@ const page = () => {
 			<Card className="w-sm border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg">
 				<CardHeader>
 					<CardTitle className="text-center text-2xl font-semibold">
-						Basic Age Calculator
+						Advance Age Calculator
 					</CardTitle>
 				</CardHeader>
 				<CardContent>

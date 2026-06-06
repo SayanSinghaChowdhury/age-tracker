@@ -17,7 +17,7 @@ const BasicAge = () => {
 	};
 
 	return (
-		<div className="grid place-items-center gap-5">
+		<div className="grid place-items-center gap-4">
 			<h1 className="font-sans text-2xl font-semibold">
 				{date
 					? isBefore(date, startOfToday())
@@ -30,7 +30,7 @@ const BasicAge = () => {
 				onOpenChange={setAutoClose}>
 				<PopoverTrigger asChild>
 					<Button
-						className="flex justify-between gap-6 border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg"
+						className="flex justify-between gap-6 border border-white/20 bg-white/10 font-light shadow-lg backdrop-blur-lg"
 						variant="outline">
 						{date ? format(date, "pppp") : "Pick your birth date"}
 						{/* Icon Calender */}
@@ -55,7 +55,7 @@ const BasicAge = () => {
 			</Popover>
 
 			<Button
-				className="flex w-auto justify-between gap-2 border border-white/20 bg-white/10 shadow-lg backdrop-blur-lg"
+				className="flex w-auto justify-between gap-2 border border-white/20 bg-white/10 font-light shadow-lg backdrop-blur-lg"
 				onClick={clear}
 				variant="outline">
 				Clean
