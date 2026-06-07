@@ -1,7 +1,8 @@
 "use client";
 
-import { dateSchema, dateSchemaType } from "@/lib/formSchema";
+import { dateSchema, DateSchemaType } from "@/lib/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { format, formatDistanceToNow } from "date-fns";
 import { CalendarArrowDownIcon } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -11,7 +12,7 @@ import { Field, FieldError } from "./shadcnui/field";
 import { Popover, PopoverContent, PopoverTrigger } from "./shadcnui/popover";
 
 const AdvanceAge = () => {
-	const [date, setDate] = useState<Date | undefined>(undefined);
+	const [date, setDate] = useState<string | null>(null);
 	const [autoClose, setAutoClose] = useState(false);
 
 	const {
@@ -28,17 +29,19 @@ const AdvanceAge = () => {
 		mode: "all",
 	});
 
-	const submitHandeler = async (dData: dateSchemaType) => {
-		await new Promise((t) => setTimeout(t, 1000));
+	const submitHandeler = async ({ date }: DateSchemaType) => {
+		await new Promise<void>((t) => setTimeout(t, 1000));
 
-		console.log(dData);
+		setDate(`You are ${formatDistanceToNow(date)} old `);
 	};
 
 	return (
 		<form
 			className="grid place-items-center gap-4"
 			onSubmit={handleSubmit(submitHandeler)}>
-			<h1 className="font-sans text-2xl font-semibold">How older you ?</h1>
+			<h1 className="font-sans text-2xl font-semibold">
+				{date ?? "How Older You ?"}
+			</h1>
 			<Controller
 				name={"date"}
 				control={control}
@@ -51,8 +54,11 @@ const AdvanceAge = () => {
 								<Button
 									className="flex justify-between gap-6 border border-white/20 bg-white/10 font-light shadow-lg backdrop-blur-lg"
 									variant="outline">
-									pick
+									{field.value
+										? format(field.value, "PPPP")
+										: "Pick your birth date"}
 									{/* Icon Calender */}
+
 									<CalendarArrowDownIcon />
 								</Button>
 							</PopoverTrigger>
@@ -62,22 +68,25 @@ const AdvanceAge = () => {
 								{/* Calender component form Schadcn  */}
 								<Calendar
 									mode="single"
-									selected={date}
+									selected={field.value}
 									captionLayout="dropdown"
 									className="h-80"
-									onSelect={() => {
-										setDate(date);
-										setAutoClose(false);
-									}}
+									onSelect={field.onChange}
 								/>
 							</PopoverContent>
-							{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 						</Popover>
+
+						{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 					</Field>
 				)}
 			/>
 
-			<Button className="w-full bg-amber-50/45">Submit</Button>
+			<Button
+				type="submit"
+				className="w-full bg-amber-50/45"
+				disabled={isSubmitting}>
+				{isSubmitting ? `Tracking Age ....` : `Track Age`}
+			</Button>
 		</form>
 	);
 };

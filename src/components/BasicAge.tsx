@@ -32,7 +32,7 @@ const BasicAge = () => {
 					<Button
 						className="flex justify-between gap-6 border border-white/20 bg-white/10 font-light shadow-lg backdrop-blur-lg"
 						variant="outline">
-						{date ? format(date, "pppp") : "Pick your birth date"}
+						{date ? format(date, "PPPP") : "Pick your birth date"}
 						{/* Icon Calender */}
 						<CalendarArrowDownIcon />
 					</Button>
