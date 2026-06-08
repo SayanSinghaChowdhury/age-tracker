@@ -19,6 +19,7 @@ const AdvanceAge = () => {
 		handleSubmit,
 		control,
 		formState: { isSubmitting },
+		reset,
 	} = useForm({
 		resolver: zodResolver(dateSchema),
 
@@ -33,6 +34,10 @@ const AdvanceAge = () => {
 		await new Promise<void>((t) => setTimeout(t, 1000));
 
 		setDate(`You are ${formatDistanceToNow(date)} old `);
+
+		setAutoClose(false);
+
+		reset();
 	};
 
 	return (
@@ -71,7 +76,10 @@ const AdvanceAge = () => {
 									selected={field.value}
 									captionLayout="dropdown"
 									className="h-80"
-									onSelect={field.onChange}
+									onSelect={(date) => {
+										field.onChange(date);
+										setAutoClose(false);
+									}}
 								/>
 							</PopoverContent>
 						</Popover>
