@@ -2,7 +2,12 @@
 
 import { dateSchema, DateSchemaType } from "@/lib/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format, formatDistanceToNow } from "date-fns";
+import {
+	format,
+	formatDistanceToNow,
+	isBefore,
+	startOfTomorrow,
+} from "date-fns";
 import { CalendarArrowDownIcon } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -76,6 +81,9 @@ const AdvanceAge = () => {
 									selected={field.value}
 									captionLayout="dropdown"
 									className="h-80"
+									disabled={(data) => {
+										return !isBefore(data, startOfTomorrow());
+									}}
 									onSelect={(date) => {
 										field.onChange(date);
 										setAutoClose(false);
