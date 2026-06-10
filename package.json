@@ -10,15 +10,21 @@
 		"prod": "eslint && next build && next start"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^5.4.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
+		"date-fns": "^4.1.0",
 		"lucide-react": "^0.562.0",
 		"next": "^16.1.1",
 		"next-themes": "^0.4.6",
+		"radix-ui": "^1.4.3",
 		"react": "^19.2.3",
+		"react-day-picker": "^10.0.0",
 		"react-dom": "^19.2.3",
+		"react-hook-form": "^7.77.0",
 		"sharp": "^0.34.5",
-		"tailwind-merge": "^3.4.0"
+		"tailwind-merge": "^3.4.0",
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4.1.18",

@@ -20,14 +20,15 @@ const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
 		<html
 			lang="en"
 			suppressHydrationWarning>
-			<body>
+			<body className="h-dvh bg-[url(/l.jpg)] bg-cover bg-center bg-no-repeat duration-[1.5s] dark:bg-[url(/blurry-neon-light-background.jpg)]">
 				<ThemeProvider
 					attribute={"class"}
 					defaultTheme="dark"
 					enableSystem={false}>
-					<Header />
-
-					<main className="mx-auto max-w-7xl px-6 py-3">{children}</main>
+					<main className="mx-auto max-w-7xl px-6 py-3">
+						<Header />
+						{children}
+					</main>
 				</ThemeProvider>
 			</body>
 		</html>
