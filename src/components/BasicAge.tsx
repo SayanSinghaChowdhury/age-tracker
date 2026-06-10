@@ -23,7 +23,7 @@ const BasicAge = () => {
 					? isBefore(date, startOfToday())
 						? `You are ${formatDistanceToNow(date)} old `
 						: `you will be ${formatDistanceToNow(date)} old`
-					: "How old you ?"}
+					: "How old are you ?"}
 			</h1>
 			<Popover
 				open={autoClose}

@@ -50,7 +50,7 @@ const AdvanceAge = () => {
 			className="grid place-items-center gap-4"
 			onSubmit={handleSubmit(submitHandeler)}>
 			<h1 className="font-sans text-2xl font-semibold">
-				{date ?? "How Older You ?"}
+				{date ?? "How Old are You ?"}
 			</h1>
 			<Controller
 				name={"date"}
